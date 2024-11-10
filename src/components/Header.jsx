@@ -3,6 +3,7 @@ import MenuItem from './MenuItem'
 import { GoHomeFill } from "react-icons/go";
 import { RiFolderInfoFill } from "react-icons/ri";
 import Link from 'next/link';
+import DarkModeSwitch from './DarkModeSwitch';
 
 export default function Header() {
   return (
@@ -13,7 +14,8 @@ export default function Header() {
             <MenuItem title="HOME" address="/" Icon={GoHomeFill}/>
             <MenuItem title="ABOUT" address="/about" Icon={RiFolderInfoFill}/>
         </div>
-        <div className="">
+        <div className="flex items-center space-x-5">
+            <DarkModeSwitch />
             <Link href="/">
             <h2 className='text-2xl'><span 
             className='font-bold 
