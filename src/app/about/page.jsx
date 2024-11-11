@@ -2,7 +2,7 @@ import React from 'react'
 
 function About() {
   return (
-    <div className='max-w-6xl mx-auto space-y-4'>
+    <div className='max-w-6xl mx-auto space-y-4 p-4'>
     <h1 className='text-2xl font-medium text-purple-500'>About</h1>
     <p>
         Welcome to Filmatic, your cinematic haven where stories, artistry, and the love of film come together. Whether you’re a casual moviegoer, a devoted film buff, or an aspiring filmmaker, Filmatic is designed to be your go-to platform for all things film. Here, we believe that every movie has a story to tell, and every viewer has a unique connection to it. Our mission is to deepen those connections by offering a space where you can explore, learn, and share the world of cinema like never before.
