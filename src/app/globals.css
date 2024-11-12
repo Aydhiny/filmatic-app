@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hover-transition {
+    color: white;
+    /* Initial text color */
+    background-color: blueviolet;
+    /* Initial background color */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    /* Add transition for both color and background color */
+}
+
+.hover-transition:hover {
+    color: black;
+    /* Text color on hover */
+    background-color: white;
+    /* Background color on hover */
+}
