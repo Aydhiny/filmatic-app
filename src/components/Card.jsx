@@ -48,7 +48,7 @@ export default function Card({ result }) {
             Watch
           </Link>
           <Link
-            className="rounded-xl bg-gray-700 hover:bg-slate-950 hover:text-purple-500 text-white font-bold text-center py-2 px-6 transition-colors duration-300"
+            className="rounded-xl dark:bg-gray-700 light:bg-gray-500  hover:bg-slate-950 hover:text-purple-500 font-bold text-center py-2 px-6 transition-colors duration-300"
             href={`/movie/${result.id}`}
           >
             Info

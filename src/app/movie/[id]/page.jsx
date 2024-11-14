@@ -31,24 +31,31 @@ export default async function MoviePage({ params }) {
           className="rounded-lg shadow-xl hover:opacity-50 cursor-pointer"
         ></Image>
         <div className="p-2">
-          <h2 className="text-lg mb-3 font-bold">
+          <h2 className="text-6xl mb-3 font-bold">
             {movie.title || movie.name}
           </h2>
           <p className="text-lg mb-3">
-            <span className="font-semibold mr-1">Overview:</span>
+            <span className="font-semibold mr-1 text-purple-500">
+              Overview:
+            </span>{" "}
+            <br />
             {movie.overview}
           </p>
           <p className="mb-3">
-            <span className="font-semibold mr-1">Date Released:</span>
+            <span className="font-semibold mr-1 text-purple-500">
+              Date Released:
+            </span>{" "}
+            <br />
             {movie.release_date || movie.first_air_date}
           </p>
           <p className="mb-3">
-            <span className="font-semibold mr-1">Rating:</span>
+            <span className="font-semibold mr-1 text-purple-500">Rating:</span>{" "}
+            <br />
             {movie.vote_count}
           </p>
           <div className="mt-12">
             <Link
-              className="rounded-sm bg-purple-500 text-gray-950 font-bold text-center py-2 px-6"
+              className="rounded-xl bg-purple-500 hover:bg-white text-gray-950 font-bold text-center py-2 px-6 transition-colors duration-300"
               href="/"
             >
               ← Back

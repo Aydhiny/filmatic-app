@@ -11,9 +11,9 @@ export default function Navbaritem({ title, param }) {
   return (
     <div>
       <Link
-        className={`m-4 
+        className={`
             hover:text-purple-600 
-            font-semibold p-2 
+            font-semibold p-2 mr-4 
             ${
               genre &&
               genre === param &&
