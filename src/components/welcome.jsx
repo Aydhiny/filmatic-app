@@ -23,7 +23,7 @@ export default function welcome() {
         <div className="mt-4">
           <p className="text-lg mt-5 leading-relaxed font-medium">
             Discover a world of movies that will keep you on the edge of your
-            seat. Whether you're in the mood for a thrilling action-packed
+            seat. Whether you&apos;re in the mood for a thrilling action-packed
             adventure, a heartwarming drama, or a mind-bending sci-fi
             masterpiece, Filmatic has you covered.
           </p>
