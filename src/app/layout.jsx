@@ -17,7 +17,8 @@ const geistMono = localFont({
 
 export const metadata = {
   title: "Filmatic App | Home",
-  description: "Movies beginner application made using Nextjs, React, Tailwind.",
+  description:
+    "Movies beginner application made using Nextjs, React, Tailwind.",
 };
 
 export default function RootLayout({ children }) {
@@ -25,16 +26,16 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Providers>
-        {/* Header*/}
-        <Header/>
+          {/* Header*/}
+          <Navbar />
 
-        <Navbar/>
-        {/* Navbar*/}
+          <Header />
 
-        {/* SearchBox*/}
-        {children}
+          {/* Navbar*/}
+
+          {/* SearchBox*/}
+          {children}
         </Providers>
-
       </body>
     </html>
   );

@@ -21,7 +21,7 @@ export default function Header() {
           <h2 className="text-2xl">
             <span
               className="font-bold 
-            bg-purple-500 text-gray-900 border border-gray-900 bg-gradient-to-t py-1 px-6 rounded-full mr-1"
+            bg-purple-500 border border-gray-900 bg-gradient-to-t py-1 px-6 rounded-full mr-1"
             >
               Filmatic
             </span>
