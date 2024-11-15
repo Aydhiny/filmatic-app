@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Navbaritem from "./Navbaritem";
 export default function welcome() {
   return (
@@ -40,10 +40,12 @@ export default function welcome() {
             </span>
           </p>
         </div>
-        <div className="flex mt-32">
-          <Navbaritem title="Trending" param="fetchTrending" />
-          <Navbaritem title="Top Rated" param="fetchTopRated" />
-        </div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <div className="flex mt-32">
+            <Navbaritem title="Trending" param="fetchTrending" />
+            <Navbaritem title="Top Rated" param="fetchTopRated" />
+          </div>
+        </Suspense>
       </div>
     </div>
   );
