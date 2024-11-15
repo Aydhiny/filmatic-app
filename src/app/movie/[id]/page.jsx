@@ -10,7 +10,7 @@ async function getMovie(movieId) {
 }
 
 export default async function MoviePage({ params }) {
-  const movieId = params.id;
+  const movieId = await params.id;
   const movie = await getMovie(movieId);
   return (
     <div className="w-full">

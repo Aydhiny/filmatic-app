@@ -1,9 +1,9 @@
 import Results from "@/components/Results";
-import SearchBox from "@/components/SearchBox";
 
 const API_KEY = process.env.API_KEY;
 
-export default async function Home({ searchParams }) {
+export default async function Home({ params }) {
+  const searchParams = new URLSearchParams(params.searchParams);
   const genre = searchParams.genre || "fetchTrending";
 
   const res = await fetch(
