@@ -12,7 +12,7 @@ export default function Navbaritem({ title, param }) {
     <div>
       <Link
         className={`
-            hover:text-purple-600 
+            hover:text-purple-600 transition-all duration-150
             font-semibold p-2 mr-4 
             ${
               genre &&

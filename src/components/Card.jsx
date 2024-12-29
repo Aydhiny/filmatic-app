@@ -5,8 +5,8 @@ import { FiThumbsUp } from "react-icons/fi";
 export default function Card({ result }) {
   return (
     <div
-      className="sm:p-3 sm:hover:shadow-slate-950 sm:shadow-md 
-  rounded-lg sm:border sm:border-s-slate-700 sm:m-2 border-slate-700 transition-shadow duration-200 m-4 p-4 group"
+      className="sm:p-3 bg-gradient-to-t from-zinc-900 to-zinc-800 sm:hover:shadow-slate-950 sm:shadow-md 
+  rounded-lg transition-shadow duration-200 m-4 p-4 group"
     >
       <Image
         src={`https://image.tmdb.org/t/p/original/${
@@ -21,10 +21,10 @@ export default function Card({ result }) {
           maxWidth: "100%",
           height: "auto",
         }}
-        className="sm:rounded-t-lg group-hover:opacity-80 transition-opacity duration-200"
+        className="rounded-lg border border-zinc-700 group-hover:opacity-80 transition-opacity duration-200"
       ></Image>
       <div className="p-2">
-        <h2 className="truncate my-4 text-lg font-bold">
+        <h2 className="truncate my-4 text-2xl font-bold">
           {result.title || result.name}
         </h2>
         <p className="line-clamp-2 text-md">{result.overview}</p>
@@ -32,23 +32,21 @@ export default function Card({ result }) {
           <p className="my-4 flex items-center">
             {result.release_date || result.first_air_date}
           </p>
-          <div className="">
-            <p>
-              {" "}
-              <FiThumbsUp className="h-5" />
-              {result.vote_count}
-            </p>
-          </div>
+          <p className="flex my-4">
+            {" "}
+            {result.vote_count}
+            <FiThumbsUp className="h-5 ml-2" />
+          </p>
         </div>
         <div className="flex justify-between">
           <Link
-            className="rounded-xl bg-purple-500 hover:bg-white text-gray-950 font-bold text-center py-2 px-6 transition-colors duration-300"
+            className="bg-gradient-to-t rounded-full border border-violet-300 border-opacity-50 from-violet-600 to-violet-500 hover:from-zinc-800 hover:to-zinc-700 text-zinc-200 font-bold text-center py-2 px-6 transition-all duration-300"
             href={`/movie/${result.id}`}
           >
             Watch
           </Link>
           <Link
-            className="rounded-xl dark:bg-gray-700 light:bg-gray-500  hover:bg-slate-950 hover:text-purple-500 font-bold text-center py-2 px-6 transition-colors duration-300"
+            className="rounded-full dark:bg-zinc-700 light:bg-gray-500 hover:bg-zinc-950 hover:text-violet-500 font-bold text-center py-2 px-6 transition-colors duration-300"
             href={`/movie/${result.id}`}
           >
             Info

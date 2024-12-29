@@ -2,43 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='1' viewBox='0 0 40 1' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v1H0z' fill='%239C92AC' fill-opacity='0.04' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
 .hover-transition {
   color: white;
-  /* Initial text color */
   background-color: blueviolet;
-  /* Initial background color */
   transition: color 0.3s ease, background-color 0.3s ease;
-  /* Add transition for both color and background color */
 }
 
 .hover-transition:hover {
   color: black;
-  /* Text color on hover */
   background-color: white;
-  /* Background color on hover */
-}
-
-/* SCROLLBAR */
-html::-webkit-scrollbar {
-  width: 12px;
-}
-
-html::-webkit-scrollbar-track {
-  background: #1a1a1a;
-  border-radius: 6px;
-}
-
-html::-webkit-scrollbar-thumb {
-  background-color: #7d3cff;
-  border-radius: 6px;
-  border: 3px solid #1a1a1a;
-}
-
-html::-webkit-scrollbar-thumb:hover {
-  background-color: #1a1a1a;
-}
-
-html {
-  scrollbar-width: thin;
-  scrollbar-color: #7d3cff #1a1a1a;
 }

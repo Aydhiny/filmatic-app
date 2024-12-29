@@ -3,7 +3,7 @@ import React from "react";
 
 function About() {
   return (
-    <div className="max-w-6xl mx-auto space-y-4 p-4">
+    <div className="max-w-6xl h-screen justify-center flex flex-col mx-auto p-4">
       <h1 className="text-2xl font-medium text-purple-500">About</h1>
       <p>
         Welcome to Filmatic, your cinematic haven where stories, artistry, and
