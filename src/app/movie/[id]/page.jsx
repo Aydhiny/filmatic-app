@@ -13,27 +13,27 @@ export default async function MoviePage({ params }) {
   const movieId = await params.id;
   const movie = await getMovie(movieId);
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-full">
       <div className="p-4 md:pt-8 justify-center flex-col md:flex-row items-center content-center max-w-6xl mx-auto md:space-x-6">
-        <Image
-          src={`https://image.tmdb.org/t/p/original/${
-            movie.backdrop_path || movie.poster_path
-          }`}
-          width={500}
-          height={300}
-          placeholder="blur"
-          blurDataURL="/spinner.svg"
-          alt="Movie poster"
-          style={{
-            maxWidth: "100%",
-            height: "100%",
-          }}
-          className="rounded-lg shadow-xl hover:opacity-50 cursor-pointer"
-        ></Image>
         <div className="p-2">
           <h2 className="text-6xl mb-3 font-bold">
             {movie.title || movie.name}
           </h2>
+          <Image
+            src={`https://image.tmdb.org/t/p/original/${
+              movie.backdrop_path || movie.poster_path
+            }`}
+            width={500}
+            height={300}
+            placeholder="blur"
+            blurDataURL="/spinner.svg"
+            alt="Movie poster"
+            style={{
+              maxWidth: "100%",
+              height: "100%",
+            }}
+            className="rounded-lg border border-zinc-600 shadow-xl w-full mb-8 hover:opacity-50 cursor-pointer"
+          ></Image>
           <p className="text-lg mb-3">
             <span className="font-semibold mr-1 text-purple-500">
               Overview:
