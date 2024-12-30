@@ -95,14 +95,15 @@ export default function Welcome() {
             <div className="p-4 rounded shadow">
               <FaRegSmileBeam className="text-2xl mb-2 text-yellow-500" />
               <p className="text-sm">
-                "Filmatic always helps me find the best movies. Love it!"
+                &quot;Filmatic always helps me find the best movies. Love
+                it!&quot;
               </p>
               <p className="text-xs text-zinc-500">- Alex</p>
             </div>
             <div className="p-4 rounded shadow">
               <FaRegSmileBeam className="text-2xl mb-2 text-yellow-500" />
               <p className="text-sm">
-                "Great recommendations and easy to use!"
+                &quot;Great recommendations and easy to use!&quot;
               </p>
               <p className="text-xs text-zinc-500">- Mia</p>
             </div>
