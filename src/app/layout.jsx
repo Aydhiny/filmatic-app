@@ -1,9 +1,9 @@
 import "./globals.css";
 import Providers from "./Providers";
-import Footer from "../components/Footer";
+import Footer from "../components/footer";
 import Header from "@/components/Header";
 import SearchBox from "@/components/SearchBox";
-import Welcome from "../components/Welcome";
+import Welcome from "../components/welcome";
 
 export const metadata = {
   title: "Filmatic App | Home",
