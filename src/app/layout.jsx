@@ -1,9 +1,5 @@
 import "./globals.css";
 import Providers from "./Providers";
-import Footer from "../components/footer";
-import Header from "@/components/Header";
-import SearchBox from "@/components/SearchBox";
-import Welcome from "../components/welcome";
 
 export const metadata = {
   title: "Filmatic App | Home",
@@ -17,11 +13,7 @@ export default function RootLayout({ children }) {
       <body>
         <Providers>
           {/* Header*/}
-          <Header />
-          <Welcome />
-          <SearchBox />
           {children}
-          <Footer />
         </Providers>
       </body>
     </html>

@@ -1,4 +1,7 @@
+import Footer from "@/components/footer";
 import Results from "@/components/Results";
+import SearchBox from "@/components/SearchBox";
+import Link from "next/link";
 import React from "react";
 
 export default async function SearchPage({ params }) {
@@ -19,12 +22,20 @@ export default async function SearchPage({ params }) {
 
   const results = data.results;
   return (
-    <div>
+    <div className="mt-12">
+      <Link
+        href="/"
+        className="mx-12 bg-gradient-to-t rounded-full border border-violet-300 border-opacity-50 from-violet-600 to-violet-500 hover:from-zinc-800 hover:to-zinc-700 text-zinc-200 font-bold text-center py-2 px-6 transition-all duration-300"
+      >
+        ← Back
+      </Link>
+      <SearchBox />
       {results && results.length === 0 && (
         <h1 className="text-center pt-6">No results found.</h1>
       )}
 
       {results && <Results results={results} />}
+      <Footer />
     </div>
   );
 }

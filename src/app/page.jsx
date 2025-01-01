@@ -1,4 +1,8 @@
+import Footer from "@/components/footer";
+import Header from "@/components/Header";
 import Results from "@/components/Results";
+import SearchBox from "@/components/SearchBox";
+import Welcome from "@/components/welcome";
 const API_KEY = process.env.API_KEY;
 
 export default async function Home({ params }) {
@@ -21,7 +25,11 @@ export default async function Home({ params }) {
 
   return (
     <div>
+      <Header />
+      <Welcome />
+      <SearchBox />
       <Results results={results} />
+      <Footer />
     </div>
   );
 }

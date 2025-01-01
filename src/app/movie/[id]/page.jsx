@@ -55,7 +55,7 @@ export default async function MoviePage({ params }) {
           </p>
           <div className="mt-12">
             <Link
-              className="rounded-xl bg-purple-500 hover:bg-white text-gray-950 font-bold text-center py-2 px-6 transition-colors duration-300"
+              className="bg-gradient-to-t rounded-full border border-violet-300 border-opacity-50 from-violet-600 to-violet-500 hover:from-zinc-800 hover:to-zinc-700 text-zinc-200 font-bold text-center py-2 px-6 transition-all duration-300"
               href="/"
             >
               ← Back
