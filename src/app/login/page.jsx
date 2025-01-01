@@ -64,8 +64,11 @@ export default function page() {
 
         <div className="text-center mt-6 text-sm text-zinc-600 dark:text-zinc-400">
           <p>
-            Don't have an account?{" "}
-            <a href="/signup" className="text-purple-600 dark:text-purple-400">
+            Don&apos;t have an account?{" "}
+            <a
+              href="/register"
+              className="text-purple-600 dark:text-purple-400"
+            >
               Sign Up
             </a>
           </p>
