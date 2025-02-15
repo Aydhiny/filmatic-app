@@ -18,11 +18,11 @@ export default function Header() {
     <div className="flex justify-center fixed w-full z-50 items-center">
       <div
         className="flex mx-auto justify-between sticky
-    items-center py-1 px-4 w-full bg-gradient-to-bl from-white to-gray-100 dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 border-b dark:border-zinc-700 dark:border-opacity-50 border-zinc-200"
+    items-center py-2 px-4 w-full bg-gradient-to-tr from-white to-gray-100 dark:bg-gradient-to-br dark:from-zinc-800 dark:to-[#2912477a] backdrop-blur-md border-b dark:border-zinc-700 dark:border-opacity-50 border-zinc-200 shadow-sm dark:shadow-zinc-900"
       >
         <Link href="/">
-          <h2 className="flex items-center text-2xl py-2">
-            <PiFilmReel className="size-6 mr-2" />
+          <h2 className="flex items-center text-2xl py-2 hover:scale-105 transition-transform duration-300">
+            <PiFilmReel className="size-6 mr-2 text-purple-500" />
             <span className="font-bold bg-gradient-to-b dark:from-zinc-100 dark:to-white from-zinc-500 to-zinc-600 bg-clip-text text-transparent rounded-full">
               Filmatic
             </span>
@@ -31,7 +31,10 @@ export default function Header() {
 
         {/* Hamburger Menu for Mobile */}
         <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-2xl focus:outline-none">
+          <button
+            onClick={toggleMenu}
+            className="text-2xl focus:outline-none text-zinc-700 dark:text-zinc-300 hover:text-purple-500 transition-colors duration-300"
+          >
             {menuOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
@@ -39,33 +42,35 @@ export default function Header() {
         {/* Menu Items */}
         <div
           className={`${
-            menuOpen ? "block" : "hidden"
-          } md:flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-5 absolute md:relative top-full left-0 w-full md:w-auto bg-zinc-900 md:bg-transparent p-4 md:p-0 shadow-md md:shadow-none`}
+            menuOpen
+              ? "block animate-fade-in"
+              : "hidden animate-fade-out"
+          } md:flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-5 absolute md:relative top-full left-0 w-full md:w-auto bg-zinc-900 md:bg-transparent p-4 md:p-0 shadow-md md:shadow-none rounded-lg md:rounded-none transition-all duration-300`}
         >
           <Link
             href="/"
-            className="flex justify-center items-center space-x-2 text-base"
+            className="flex hover:text-purple-500 justify-center items-center space-x-2 text-base transition-colors duration-300"
           >
             <GoHomeFill className="text-md md:hidden" />
             <span>Home</span>
           </Link>
           <Link
             href="/about"
-            className="flex justify-center items-center space-x-2 text-base"
+            className="flex hover:text-purple-500 justify-center items-center space-x-2 text-base transition-colors duration-300"
           >
             <RiFolderInfoFill className="text-md md:hidden" />
             <span>About</span>
           </Link>
           <Link
             href="/login"
-            className="flex justify-center items-center space-x-2 text-base"
+            className="flex hover:text-purple-500 justify-center items-center space-x-2 text-base transition-colors duration-300"
           >
             <IoLogIn className="text-md md:hidden" />
             <span>Login</span>
           </Link>
           <Link
             href="/register"
-            className="flex justify-center items-center space-x-2 text-base"
+            className="flex hover:text-purple-500 justify-center items-center space-x-2 text-base transition-colors duration-300"
           >
             <RiFolderInfoFill className="text-md md:hidden" />
             <span>Register</span>

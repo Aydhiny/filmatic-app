@@ -23,12 +23,12 @@ export default async function SearchPage({ params }) {
   const results = data.results;
   return (
     <div className="mt-12">
-      <Link
-        href="/"
-        className="mx-12 bg-gradient-to-t rounded-full border border-violet-300 border-opacity-50 from-violet-600 to-violet-500 hover:from-zinc-800 hover:to-zinc-700 text-zinc-200 font-bold text-center py-2 px-6 transition-all duration-300"
-      >
-        ← Back
-      </Link>
+     <Link
+  className="bg-purple-700 mx-12 rounded-sm hover:bg-white hover:text-black text-zinc-200 font-bold text-center py-2 px-6 transition-all duration-300"
+  href="/"
+>
+  &lt; Back
+</Link>
       <SearchBox />
       {results && results.length === 0 && (
         <h1 className="text-center pt-6">No results found.</h1>
