@@ -33,7 +33,7 @@ function About() {
 
         <div className="prose lg:prose-xl text-zinc-400 leading-relaxed"> 
           <p className="text-lg"> 
-            Welcome to Filmatic, your cinematic haven where stories, artistry, and the love of film come together. Whether you're a casual moviegoer, a devoted film buff, or an aspiring filmmaker, Filmatic is designed to be your go-to platform for all things film. Here, we believe that every movie has a story to tell, and every viewer has a unique connection to it. Our mission is to deepen those connections by offering a space where you can explore, learn, and share the world of cinema like never before.
+            Welcome to Filmatic, your cinematic haven where stories, artistry, and the love of film come together. Whether you&apos;re a casual moviegoer, a devoted film buff, or an aspiring filmmaker, Filmatic is designed to be your go-to platform for all things film. Here, we believe that every movie has a story to tell, and every viewer has a unique connection to it. Our mission is to deepen those connections by offering a space where you can explore, learn, and share the world of cinema like never before.
           </p>
 
           <h2 className="text-3xl font-semibold mb-4 mt-8"><FiFilm className="inline-block mr-2 text-purple-500" /> What We Offer</h2> 
@@ -57,7 +57,7 @@ function About() {
 
           <h2 className="text-3xl font-semibold mb-4 mt-8"><FiFilm className="inline-block mr-2 text-purple-500" /> Why Filmatic?</h2> 
           <p className="text-lg">
-            In a world where countless movies are released every year, finding a platform that curates quality content and fosters a genuine love for cinema is essential. Filmatic was created by movie enthusiasts for movie enthusiasts, and we're passionate about providing a personalized experience that goes beyond just watching. We believe that film is more than just entertainment; it's a powerful medium that can educate, inspire, and connect us all.
+            In a world where countless movies are released every year, finding a platform that curates quality content and fosters a genuine love for cinema is essential. Filmatic was created by movie enthusiasts for movie enthusiasts, and we&apos;re passionate about providing a personalized experience that goes beyond just watching. We believe that film is more than just entertainment; it&apos;s a powerful medium that can educate, inspire, and connect us all.
           </p>
 
           <h2 className="text-3xl font-semibold mb-4 mt-8"><FiUsers className="inline-block mr-2 text-purple-500" /> Our Team</h2>
@@ -67,12 +67,12 @@ function About() {
 
           <h2 className="text-3xl font-semibold mb-4 mt-8"><FiMessageSquare className="inline-block mr-2 text-purple-500" /> Contact Us</h2>
           <p className="text-lg">
-            Have questions, suggestions, or feedback? We'd love to hear from you! You can reach us at [your_email@example.com](mailto:your_email@example.com). Follow us on social media for the latest updates and discussions: [links to your social media].
+            Have questions, suggestions, or feedback? We&apos;d love to hear from you! You can reach us at [your_email@example.com](mailto:your_email@example.com). Follow us on social media for the latest updates and discussions: [links to your social media].
           </p>
 
           <h2 className="text-3xl font-semibold mb-4 mt-8"><FiStar className="inline-block mr-2 text-purple-500" /> Join Us in the Journey</h2>
           <p className="text-lg">
-            Whether you're here to find your next favorite movie, learn more about the history of cinema, or simply indulge in your passion, Filmatic is here to make your movie experience more meaningful and exciting. Join our community, share your thoughts, and let's celebrate the magic of movies together.
+            Whether you&apos;re here to find your next favorite movie, learn more about the history of cinema, or simply indulge in your passion, Filmatic is here to make your movie experience more meaningful and exciting. Join our community, share your thoughts, and let&apos;s celebrate the magic of movies together.
           </p>
         </div>
       </div>
