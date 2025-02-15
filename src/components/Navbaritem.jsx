@@ -1,28 +1,38 @@
 "use client";
 
-import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import React from "react";
 
-import { useSearchParams } from "next/navigation";
-
 export default function Navbaritem({ title, param }) {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const genre = searchParams.get("genre");
+
+  const handleClick = (e) => {
+    e.preventDefault(); 
+
+    router.push(`/?genre=${param}`, { scroll: false });
+
+    const resultsSection = document.getElementById("results");
+    if (resultsSection) {
+      resultsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div>
-      <Link
-        className={`
-            hover:text-purple-600 transition-all duration-150
+      <button
+        onClick={handleClick}
+        className={`hover:text-purple-600 transition-all duration-150
             font-semibold p-2 mr-4 
             ${
-              genre &&
-              genre === param &&
-              "underline underline-offset-8 decoration-4 decoration-purple-500 rouded-lg"
+              genre === param
+                ? "underline underline-offset-8 decoration-4 decoration-purple-500 rounded-sm"
+                : ""
             }`}
-        href={`/?genre=${param}`}
       >
         {title}
-      </Link>
+      </button>
     </div>
   );
 }
