@@ -16,7 +16,7 @@ export default function Header() {
 
   return (
     <div className="flex justify-center fixed w-full z-50 items-center">
-      <div className="flex mx-auto justify-between sticky items-center py-2 px-4 w-full bg-gradient-to-tr from-white to-gray-100 dark:bg-gradient-to-br dark:from-zinc-800 dark:to-[#2912477a] backdrop-blur-md border-b dark:border-zinc-700 dark:border-opacity-50 border-zinc-200 dark:shadow-zinc-900">
+      <div className="flex mx-auto justify-between sticky items-center py-2 px-4 w-full bg-gradient-to-tr from-white to-gray-100 dark:bg-gradient-to-t dark:from-zinc-800 dark:to-[#2912477a] backdrop-blur-md border-b dark:border-zinc-700 dark:border-opacity-50 border-zinc-200 dark:shadow-zinc-900">
         <div className="flex items-center">
           <Link href="/">
             <h2 className="flex items-center text-2xl py-2 hover:scale-105 transition-transform duration-300">
