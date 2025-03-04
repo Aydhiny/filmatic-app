@@ -1,5 +1,6 @@
 import "./globals.css";
 import Providers from "./Providers";
+import { SessionProvider } from 'next-auth/react';
 
 export const metadata = {
   title: "Filmatic App | Home",
@@ -9,6 +10,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+     <SessionProvider>
     <html lang="en">
       <body>
         <Providers>
@@ -17,5 +19,6 @@ export default function RootLayout({ children }) {
         </Providers>
       </body>
     </html>
+    </SessionProvider>
   );
 }
