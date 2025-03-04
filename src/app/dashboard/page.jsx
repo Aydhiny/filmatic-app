@@ -10,6 +10,14 @@ export default function Dashboard() {
   const router = useRouter();
   const [films, setFilms] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [filmData, setFilmData] = useState({
+    title: '',
+    description: '',
+    releaseYear: '',
+    trailerUrl: '',
+  });
 
   const fetchUserFilms = async () => {
     try {
@@ -25,6 +33,43 @@ export default function Dashboard() {
       setErrorMessage('Something went wrong');
     }
   };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFilmData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+const handleSubmit = async (event) => {
+  event.preventDefault();
+
+  try {
+    const response = await fetch('/api/user/films', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        title: formData.title,
+        description: formData.description,
+        releaseYear: formData.releaseYear,
+        trailerUrl: formData.trailerUrl,
+        userId: session.user.id, 
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to upload film');
+    }
+
+    const newFilm = await response.json();
+    setFilms((prevFilms) => [...prevFilms, newFilm]);
+    setErrorMessage('');
+  } catch (error) {
+    console.error('Error uploading film:', error);
+    setErrorMessage('Error uploading film: ' + error.message);
+  }
+};
+
 
   useEffect(() => {
     if (session?.user) {
@@ -49,15 +94,19 @@ export default function Dashboard() {
 
         {/* Films Section */}
         <div className="my-8 text-center">
-            <div className='flex items-center mb-4 justify-center'>
+          <div className='flex items-center mb-4 justify-center'>
             <FaFilm className='size-8 mr-4 text-white'/>
-          <h2 className="text-2xl font-semibold text-zinc-800 dark:text-gray-100">
-            Your Films
-          </h2>
-            </div>
+            <h2 className="text-2xl font-semibold text-zinc-800 dark:text-gray-100">
+              Your Films
+            </h2>
+          </div>
 
           {errorMessage && (
             <p className="text-red-600 text-sm mb-4">{errorMessage}</p>
+          )}
+
+          {successMessage && (
+            <p className="text-green-600 text-sm mb-4">{successMessage}</p>
           )}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -94,20 +143,14 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* Upload Section */}
+        {/* Upload Button */}
         <div className="mt-6 flex justify-center gap-6">
-          <Link
-            href="/upload"
+          <button
+            onClick={() => setIsModalOpen(true)}
             className="w-full px-4 sm:w-auto bg-purple-600 border border-white border-opacity-30 text-white font-semibold py-3 rounded-lg text-center hover:bg-purple-700 transition-all duration-300 shadow-lg flex items-center justify-center gap-2"
           >
             <FaUpload className="text-lg" /> Upload a Film
-          </Link>
-          <Link
-            href="/upload-trailer"
-            className="w-full sm:w-auto bg-white border border-black border-opacity-25 text-black font-semibold py-3 px-4 rounded-lg text-center hover:bg-green-700 transition-all duration-300 shadow-lg flex items-center justify-center gap-2"
-          >
-            <FaFilm className="text-lg" /> Upload a Trailer
-          </Link>
+          </button>
         </div>
 
         {/* Edit Profile Button */}
@@ -128,6 +171,74 @@ export default function Dashboard() {
       >
         &lt; Back
       </Link>
+
+      {/* Modal Popup */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white dark:bg-zinc-800 rounded-lg p-6 w-full max-w-md">
+            <h3 className="text-xl font-semibold text-zinc-800 dark:text-gray-100 mb-4">
+              Upload a New Film
+            </h3>
+            <form onSubmit={handleSubmit}>
+              <div className="mb-4">
+                <label className="block text-sm font-semibold text-zinc-700 dark:text-gray-200">Title</label>
+                <input
+                  type="text"
+                  name="title"
+                  value={filmData.title}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-2 mt-2 bg-gray-100 dark:bg-zinc-900 text-gray-700 dark:text-gray-100 rounded-md"
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-sm font-semibold text-zinc-700 dark:text-gray-200">Description</label>
+                <textarea
+                  name="description"
+                  value={filmData.description}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-2 mt-2 bg-gray-100 dark:bg-zinc-900 text-gray-700 dark:text-gray-100 rounded-md"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-sm font-semibold text-zinc-700 dark:text-gray-200">Release Year</label>
+                <input
+                  type="number"
+                  name="releaseYear"
+                  value={filmData.releaseYear}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-2 mt-2 bg-gray-100 dark:bg-zinc-900 text-gray-700 dark:text-gray-100 rounded-md"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-sm font-semibold text-zinc-700 dark:text-gray-200">Trailer URL</label>
+                <input
+                  type="url"
+                  name="trailerUrl"
+                  value={filmData.trailerUrl}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-2 mt-2 bg-gray-100 dark:bg-zinc-900 text-gray-700 dark:text-gray-100 rounded-md"
+                />
+              </div>
+              <div className="flex justify-between">
+                <button
+                  type="button"
+                  onClick={() => setIsModalOpen(false)}
+                  className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-all duration-300"
+                >
+                  Upload
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
