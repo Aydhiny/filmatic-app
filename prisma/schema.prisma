@@ -16,12 +16,13 @@ generator client {
 }
 
 model User {
-  id       Int      @id @default(autoincrement())
+  id       String   @id @default(cuid())
   email    String   @unique
   name     String?
   password String?
   sessions Session[]
   films    Film[]  
+  accounts Account[]
 }
 
 model Film {
@@ -30,14 +31,29 @@ model Film {
   description String? 
   releaseYear Int?    
   trailerUrl  String?  
-  userId      Int    
+  userId      String 
   user        User     @relation(fields: [userId], references: [id]) 
   createdAt   DateTime @default(now()) 
 }
 
 model Session {
-  id     Int    @id @default(autoincrement())
-  userId Int
+  id     Int      @id @default(autoincrement())
+  userId String   
   expires DateTime
-  user   User   @relation(fields: [userId], references: [id])
+  user   User     @relation(fields: [userId], references: [id])
+}
+
+model Account {
+  id                 Int      @id @default(autoincrement())
+  userId             String  
+  provider           String
+  providerAccountId  String
+  refresh_token      String?
+  access_token       String?
+  expires_in         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?
+  session_state      String?
+  user               User     @relation(fields: [userId], references: [id])
 }
