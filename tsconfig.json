@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
     "target": "ES2017",
+    "baseUrl": "./", 
+     "paths": {
+      "@/*": ["src/*"]
+    },
     "lib": [
       "dom",
       "dom.iterable",
