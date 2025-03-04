@@ -20,8 +20,11 @@ export default function Register() {
     return "Weak";
   };
 
-  const handleRegister = async () => {
-    e.preventDefault();
+  const handleRegister = async (e) => {
+    e.preventDefault(); // 🔴 Prevent form from reloading the page
+
+    setErrorMessage("");
+    setSuccessMessage("");
 
     if (!isValidEmail(email)) {
       setErrorMessage("Please enter a valid email address.");
@@ -58,6 +61,11 @@ export default function Register() {
 
       setSuccessMessage("Registration successful! You can now log in.");
       setShowModal(true);
+
+      // ✅ Clear form fields after successful registration
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
     } catch (error) {
       setErrorMessage("An error occurred. Please try again.");
       setShowModal(true);
@@ -65,10 +73,9 @@ export default function Register() {
   };
 
   return (
-    <div
-      className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/background.jpg')" }}
-    >
+    <div className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/background.jpg')" }}>
+      
       <div className="bg-zinc-200 dark:bg-zinc-800 bg-opacity-90 dark:bg-opacity-95 rounded-lg shadow-lg p-8 w-11/12 max-w-md">
         <div className="text-center mb-6">
           <FaUserPlus className="text-6xl text-purple-600 dark:text-purple-400 mx-auto" />
