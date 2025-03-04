@@ -1,5 +1,6 @@
 {
   "name": "filmatic-app",
+  "vercel-build": "npx prisma generate && next build",
   "version": "0.1.0",
   "private": true,
   "scripts": {
