@@ -62,14 +62,12 @@ export default function Header() {
               href="/login"
               className="flex items-center space-x-2 text-base hover:text-purple-500 transition-colors duration-300"
             >
-              <IoLogIn className="text-xl" />
               <span>Login</span>
             </Link>
             <Link
               href="/register"
               className="flex items-center space-x-2 text-base hover:text-purple-500 transition-colors duration-300"
             >
-              <IoPersonAdd className="text-xl" />
               <span>Register</span>
             </Link>
           </div>
@@ -80,14 +78,12 @@ export default function Header() {
             href="/login"
             className="flex items-center space-x-2 text-base hover:text-purple-500 transition-colors duration-300"
           >
-            <IoLogIn className="text-xl" />
             <span>Login</span>
           </Link>
           <Link
             href="/register"
             className="flex items-center space-x-2 text-base hover:text-purple-500 transition-colors duration-300"
           >
-            <IoPersonAdd className="text-xl" />
             <span>Register</span>
           </Link>
         </div>
